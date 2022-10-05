@@ -1,6 +1,18 @@
+.navbar-container {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+  .container-fluid {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+
 .navbar-annia {
-  justify-content: space-between;
-  background: white;
+  background: $lightgreen;
+  display: flex;
 }
 
 .navbar-annia .navbar-collapse {
@@ -8,5 +20,6 @@
 }
 
 .navbar-annia .navbar-brand img {
+  justify-items: flex-end;
   width: 40px;
 }
