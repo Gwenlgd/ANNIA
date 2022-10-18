@@ -1,6 +1,6 @@
 require "test_helper"
 
-class TransportTest < ActiveSupport::TestCase
+class VoyagesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

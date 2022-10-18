@@ -1,4 +1,3 @@
-<%#  A SUPPRIMER ? %>
 <h1>Le lieu reste encore secret</h1>
 
 <h2>Comment s'y rendre</h2>
@@ -13,15 +12,10 @@
 
 
 <%# Questionaire pour savoir qui vient comment et si place en voiture %>
-
-
-      <%= simple_form_for [@voyages] do |f| %>
-        <%= f.input :category%>
-        <%= f.input :ville%>
-        <%= f.input :rendezvous%>
-        <%= f.input :place%>
-        <%= f.input :heure_arrivee%>
-        <%= f.input :date_arrivee%>
-        <%= f.input :heure_depart%>
-        <%= f.input :date_depart%>
-        <%= f.button :submit%>
+  <% @voyages.each do |voyage| %>
+    <%= voyage.category %>
+    <%= voyage.user.first_name %>
+    <%= link_to voyage_path(voyage) do %>
+    <p>Voir plus</p>
+    <% end %>
+  <% end %>
