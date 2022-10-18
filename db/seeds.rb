@@ -18,4 +18,4 @@ puts "Creating users..."
 gwen = User.create!(first_name: "Gwen", last_name: "Leg", email: "gwenl@test.com", password: "paradise")
 
 puts "Creating voyages..."
-voyage = Voyage.create!(category: "Voiture", ville: "Paris", rendezvous: "Paris 15", place: "3", user: gwen)
+voyage_gwen = Voyage.create!(category: "Voiture", ville: "Paris", rendezvous: "Paris 15", place: "3", user: gwen)
