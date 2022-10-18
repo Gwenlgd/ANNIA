@@ -25,3 +25,23 @@
         <%= f.input :heure_depart%>
         <%= f.input :date_depart%>
         <%= f.button :submit%>
+      <% end %>
+
+
+<%= simple_form_for @voyage do |f| %>
+        <%= f.input :ville, label: "Ville de départ"%>
+        <%= f.input :category do %>
+          <%= f.input :category, as: :radio_buttons ["Voiture", "Train"],label: false %>
+        <% end %>
+          <% if :category == "Voiture" %>
+            <%= f.input :place, label: "Combien de de place as-tu de disponible dans ta voiture"%>
+            <%= f.input :rendezvous, label: "Lieu de rendez-vous pour le départ"%>
+            <%= f.input :date_depart, label: "Quel jour ?"%>
+            <%= f.input :heure_depart, label: "A quelle heure penses-tu partir ?"%>
+          <% end %>
+
+        <%= f.input :date_arrivee, label: "Quel jour arrives-tu ?"%>
+        <%= f.input :heure_arrivee, label: "A quelle heure arrive ton train ?"%>
+
+        <%= f.button :submit%>
+      <% end %>
