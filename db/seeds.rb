@@ -5,13 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-# require "open-uri"
+require "open-uri"
+require "json"
+
+puts "Cleaning database..."
+User.destroy_all
+Voyage.destroy_all
 
 
-# puts "Cleaning database..."
-# User.destroy_all
 
+puts "Creating users..."
+gwen = User.create!(first_name: "Gwen", last_name: "Leg", email: "gwenl@test.com", password: "paradise")
 
-
-# puts "Creating users..."
-# gwen = User.create!(first_name: "Gwen", last_name: "Leg", email: "gwenl@test.com", password: "paradise")
+puts "Creating voyages..."
+voyage = Voyage.create!(category: "Voiture", ville: "Paris", rendezvous: "Paris 15", place: "3", user: gwen)
