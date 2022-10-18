@@ -1,2 +1,10 @@
-    <%= @voyage.category %>
-    <%= @voyage.user.first_name %>
+
+    <h1>Show page</h1>
+    <h1>Attention margin navbar</h1>
+    <h1>Problem pour afficher les infos</h1>
+    <p><%= @voyage.category %></p>
+    <h2><%= @voyage.user %></h2>
+
+    <%= link_to voyages_path do %>
+    <p>Retour</p>
+    <% end %>

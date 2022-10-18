@@ -1,17 +1,20 @@
+<h1>Margin à ajouter</h1>
+<h1>Margin à ajouter</h1>
+
+
 <h1>Le lieu reste encore secret</h1>
 
-<h2>Comment s'y rendre</h2>
+<h2>Infos : Comment s'y rendre</h2>
 
 <p>A 1h45 de Paris en train ou voiture</p>
 <p>À 3h40 de Lyon en train ou voiture (changement à la gare de Lyon donc la même gare)</p>
-
 <p>Rendez vous gare de Montargis</p>
-
-
 <p>Montargis - lieu : environ 25 min en voiture</p>
+<h2> Tous les transports disponibles</h2>
+<%# Pour tout le monde : afficher par statut : avec place disponible ou en recherche ou ok pas besoin %>
+<%# Pour current user : afficher son trajet même si pas de place %>
 
 
-<%# Questionaire pour savoir qui vient comment et si place en voiture %>
   <% @voyages.each do |voyage| %>
     <%= voyage.category %>
     <%= voyage.user.first_name %>
@@ -19,3 +22,11 @@
     <p>Voir plus</p>
     <% end %>
   <% end %>
+
+<%# Questionaire pour savoir qui vient comment et si place en voiture %>
+
+<h2>Questionnaire</h2>
+
+    <%= link_to new_voyage_path do %>
+    <p>Créer</p>
+    <% end %>
