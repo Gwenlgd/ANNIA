@@ -15,7 +15,7 @@ class VoyagesController < ApplicationController
 
   def create
     @voyage = Voyage.new(voyage_params)
-    @voyage.user_id = current_user.id
+    @voyage.user_id = current_user
     if @voyage.save
       redirect_to voyages_path
     else
@@ -26,7 +26,7 @@ class VoyagesController < ApplicationController
   private
 
   def voyage_params
-    params.require(:voyage).permit(:category, :ville, :rendezvous, :place, :heure_arrivee, :date_arrivee, :heure_depart, :date_depart)
+    params.require(:voyage).permit(:category, :ville, :rendezvous, :place, :heure_arrivee, :date_arrivee, :heure_depart,:date_depart)
   end
 
   def set_voyage
