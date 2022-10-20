@@ -2,9 +2,18 @@
     <h1>Show page</h1>
     <h1>Attention margin navbar</h1>
     <h1>Problem pour afficher les infos</h1>
-    <p><%= @voyage.category %></p>
-    <h2><%= @voyage.user %></h2>
 
-    <%= link_to voyages_path do %>
-    <p>Retour</p>
-    <% end %>
+      <h2>Par <%= @voyage.user.first_name %></h2>
+      <p>Vient en : <%= @voyage.category %></p>
+      <p>Ville départ :<%= @voyage.ville %></p>
+      <p>Lieu de RDV :<%= @voyage.rendezvous %></p>
+      <%#  changer date/heure arrivée / départ, pas logique %>
+      <p>Nb de place dans la voiture :<%= @voyage.place %></p>
+
+
+
+      <%= link_to "Retour", voyages_path %>
+      <%= link_to "Edit", edit_voyage_path(@voyage), class: "ms-3 text-warning" %>
+      <%= link_to "Remove", voyage_path(@voyage),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+          class: "ms-3 text-danger" %>

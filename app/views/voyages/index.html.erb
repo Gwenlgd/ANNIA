@@ -18,10 +18,15 @@
   <% @voyages.each do |voyage| %>
     <%= voyage.category %>
     <%= voyage.user.first_name %>
-    <%= link_to voyage_path(voyage) do %>
-    <p>Voir plus</p>
-    <% end %>
+    <%= link_to "More info", voyage_path(voyage) %>
+    <%= link_to "Edit", edit_voyage_path(voyage), class: "ms-3 text-warning" %>
+    <%= link_to "Remove", voyage_path(voyage),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+          class: "ms-3 text-danger"
+    %>
   <% end %>
+
+
 
 <%# Questionaire pour savoir qui vient comment et si place en voiture %>
 

@@ -30,6 +30,8 @@
 
 <%= simple_form_for @voyage do |f| %>
         <%= f.input :ville, label: "Ville de départ"%>
+        <%= f.input :category, as: :radio_buttons, collection: ["Voiture", "Train"] %>
+
         <%= f.input :category do %>
           <%= f.input :category, as: :radio_buttons ["Voiture", "Train"],label: false %>
         <% end %>
@@ -45,3 +47,33 @@
 
         <%= f.button :submit%>
       <% end %>
+
+
+      <%= simple_form_for @voyage do |f| %>
+        <%= f.input :category, collection: ["Voiture", "Train"] %>
+        <%= f.input :ville, label: "Ville de départ?"%>
+        <%= f.input :place, label: "Combien de de place as-tu de disponible dans ta voiture"%>
+        <%= f.input :rendezvous, label: "Lieu de rendez-vous pour le départ"%>
+        <%= f.input :date_depart, label: "Quel jour ?"%>
+        <%= f.input :heure_depart, label: "A quelle heure penses-tu partir ?"%>
+        <%= f.input :date_arrivee, label: "Quel jour arrives-tu ?"%>
+        <%= f.input :heure_arrivee, label: "A quelle heure arrive ton train ?"%>
+        <%= f.button :submit%>
+      <% end %>
+
+
+    <%= link_to "More info", voyage_path(voyage) %>
+    <%= link_to "Edit", edit_voyage_path(voyage), class: "ms-3 text-warning" %>
+    <%= link_to "Remove", voyage_path(voyage),
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+        class: "ms-3 text-danger"
+    %>
+    $
+
+  <%# LINKS %>
+
+      <%= link_to "Retour", voyages_path %>
+      <%= link_to "Edit", edit_voyage_path(@voyage), class: "ms-3 text-warning" %>
+      <%= link_to "Remove", voyage_path(@voyage),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+          class: "ms-3 text-danger" %>
