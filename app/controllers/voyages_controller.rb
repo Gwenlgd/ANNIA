@@ -16,11 +16,12 @@ class VoyagesController < ApplicationController
 
   def new
     @voyage = Voyage.new
+    @voyage.user = current_user
   end
 
   def create
     @voyage = Voyage.new(voyage_params)
-    @voyage.user_id = current_user
+    # @voyage_user = current_user.id
     if @voyage.save
       redirect_to voyages_path
     else
