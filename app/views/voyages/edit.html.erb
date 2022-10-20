@@ -3,4 +3,10 @@
 
 
 <h1>Edit</h1>
-<%= render "form", voyage: @voyage %>
+
+
+<% if current_user.id == @voyage.user %>
+  <%= render "form", voyage: @voyage %>
+<% else %>
+<p>You can not modify</p>
+<% end %>
