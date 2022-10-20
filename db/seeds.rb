@@ -17,8 +17,8 @@ user1 = User.create!(first_name: "Gwen", last_name: "Leg", email: "gwenl@test.co
 user2 = User.create!(first_name: "Mathilde", last_name: "Leg", email: "mathildel@test.com", password: "paradise")
 
 puts "Creating voyages..."
-voyage_gwen = Voyage.create!(category: "Voiture", ville: "Paris", rendezvous: "Paris 15", place: "3", heure_arrivee: "09:26:00" , date_arrivee: "2022-10-20" , heure_depart: "09:26:00" , date_depart: "2022-10-22",user: user1)
+# voyage_gwen = Voyage.create!(category: "Voiture", ville: "Paris", rendezvous: "Paris 15", place: "3", heure_arrivee: "09:26:00" , date_arrivee: "2022-10-20" , heure_depart: "09:26:00" , date_depart: "2022-10-22",user: user1)
 
-voyage_gwen2 = Voyage.create!(category: "Train", ville: "Paris", rendezvous: "Paris 15", place: "2", heure_arrivee: "09:26:00" , date_arrivee: "2022-10-20" , heure_depart: "09:26:00" , date_depart: "2022-10-22",user: user1)
+# voyage_gwen2 = Voyage.create!(category: "Train", ville: "Paris", rendezvous: "Paris 15", place: "2", heure_arrivee: "09:26:00" , date_arrivee: "2022-10-20" , heure_depart: "09:26:00" , date_depart: "2022-10-22",user: user1)
 
 voyage_gwen2 = Voyage.create!(category: "Train", ville: "Nice", rendezvous: "Paris 15", place: "2", heure_arrivee: "09:26:00" , date_arrivee: "2022-10-20" , heure_depart: "09:26:00" , date_depart: "2022-10-22",user: user2)

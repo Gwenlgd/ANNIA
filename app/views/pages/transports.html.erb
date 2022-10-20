@@ -77,3 +77,10 @@
       <%= link_to "Remove", voyage_path(@voyage),
           data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
           class: "ms-3 text-danger" %>
+
+
+      <%= f.input :rendezvous, label: "Lieu de rendez-vous pour le départ"%>
+      <%= f.input :date_depart, label: "Quel jour ?"%>
+      <%= f.input :heure_depart, label: "A quelle heure penses-tu partir ?"%>
+      <%= f.input :date_arrivee, label: "Quel jour arrives-tu ?"%>
+      <%= f.input :heure_arrivee, label: "A quelle heure arrive ton train ?"%>
