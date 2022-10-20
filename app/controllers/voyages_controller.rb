@@ -16,15 +16,17 @@ class VoyagesController < ApplicationController
 
   def new
     @voyage = Voyage.new
-    @voyage.user = current_user
+    # @voyage.user = current_user
   end
 
   def create
+    # @user = current_user.id
     @voyage = Voyage.new(voyage_params)
     # @voyage_user = current_user.id
     if @voyage.save
-      redirect_to voyages_path
+      redirect_to voyages_path, notice: "Item was saved successfully."
     else
+      flash[:error] = "Error creating item. Please try again."
       render :new, status: :unprocessable_entity
     end
   end
@@ -48,7 +50,7 @@ class VoyagesController < ApplicationController
   private
 
   def voyage_params
-    params.require(:voyage).permit(:category, :ville, :rendezvous, :place, :heure_arrivee, :date_arrivee, :heure_depart, :date_depart)
+    params.require(:voyage).permit(:category, :ville, :place, user_id: current_user.id)
   end
 
   def set_voyage
