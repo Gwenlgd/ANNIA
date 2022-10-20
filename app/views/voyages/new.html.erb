@@ -2,16 +2,9 @@
 <h1>Margin à ajouter</h1>
 
 
-<h1>Créer</h1>
+<h1>Hello <%= @voyage.user_id %> </h1>
 
-      <%= simple_form_for @voyage do |f| %>
-        <%= f.input :category, as: :radio_buttons, collection: ["Voiture", "Train"] %>
-        <%= f.input :ville, label: "Ville de départ?"%>
-        <%= f.input :place, label: "Combien de de place as-tu de disponible dans ta voiture"%>
-        <%= f.input :rendezvous, label: "Lieu de rendez-vous pour le départ"%>
-        <%= f.input :date_depart, label: "Quel jour ?"%>
-        <%= f.input :heure_depart, label: "A quelle heure penses-tu partir ?"%>
-        <%= f.input :date_arrivee, label: "Quel jour arrives-tu ?"%>
-        <%= f.input :heure_arrivee, label: "A quelle heure arrive ton train ?"%>
-        <%= f.button :submit%>
-      <% end %>
+
+    <%= render "form", voyage: @voyage %>
+
+    <%= link_to "Retour", voyages_path %>
