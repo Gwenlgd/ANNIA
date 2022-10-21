@@ -50,7 +50,7 @@ class VoyagesController < ApplicationController
   private
 
   def voyage_params
-    params.require(:voyage).permit(:category, :ville, :place, user_id: current_user.id)
+    params.require(:voyage).permit(:category, :ville, :place, :rendezvous, :date_depart, :heure_depart, :date_arrivee, :heure_arrivee, :user_id)
   end
 
   def set_voyage

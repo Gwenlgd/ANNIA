@@ -78,9 +78,17 @@
           data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
           class: "ms-3 text-danger" %>
 
+<h1>Margin à ajouter</h1>
+<h1>Margin à ajouter</h1>
 
-      <%= f.input :rendezvous, label: "Lieu de rendez-vous pour le départ"%>
-      <%= f.input :date_depart, label: "Quel jour ?"%>
-      <%= f.input :heure_depart, label: "A quelle heure penses-tu partir ?"%>
-      <%= f.input :date_arrivee, label: "Quel jour arrives-tu ?"%>
-      <%= f.input :heure_arrivee, label: "A quelle heure arrive ton train ?"%>
+<h1>Repas</h1>
+
+<%= link_to new_user_session_path do %>
+    <p>Se connecter</p>
+    <% end %>
+
+  <h2>Questionnaire</h2>
+
+    <%= link_to new_repa_path do %>
+    <p>Créer</p>
+    <% end %>
