@@ -6,7 +6,7 @@
 
 <h1>Edit</h1>
 
-<% if current_user.id == @voyage.user %>
+<% if current_user.id == @voyage.user_id %>
   <%= render "form", voyage: @voyage %>
 <% else %>
 <p>You can not modify</p>
