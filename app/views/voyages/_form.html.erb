@@ -1,8 +1,26 @@
   <% if current_user %>
-    <h1>Hello <%= current_user.first_name %> </h1>
-    <h1>Créer</h1>
+      <h1>Hello <%= current_user.first_name %> </h1>
+      <h1>Créer</h1>
+      <%= simple_form_for(@voyage, data: {turbo: false}) do |f| %>
+        <%= f.input :category, as: :radio_buttons , collection: ["Voiture", "Train"], label: "Moyen de transport (Voiture ou train)" %>
+        <%= f.input :ville, label: "Ville de départ?"%>
+        <%= f.input :place, label: "Combien de de place as-tu de disponible dans ta voiture"%>
+        <%= f.input :rendezvous, label: "Lieu de rendez-vous pour le départ"%>
+        <%= f.input :date_depart, label: "Quel jour ?"%>
+        <%= f.input :heure_depart, label: "A quelle heure penses-tu partir ?"%>
+        <%= f.input :date_arrivee, label: "Quel jour arrives-tu ?"%>
+        <%= f.input :heure_arrivee, label: "A quelle heure arrive ton train ?"%>
+        <%= f.button :submit%>
+      <% end %>
+  <% else %>
+    <h1>Merci de vous connecter</h1>
+    <%= link_to "Sign in", new_user_session_path, class: "btn btn-signup-forgotpassword py-2"%>
+    <%= link_to "Become a member", new_user_registration_path, class: "btn btn-signup-forgotpassword py-2"%>
+  <% end %>
+
+
     <%= simple_form_for(@voyage, data: {turbo: false}) do |f| %>
-      <%= f.input :category, label: "Moyen de transport (Voiture ou train)" %>
+      <%= f.input :category, as: :radio_buttons , collection: ["Voiture", "Train"], label: "Moyen de transport (Voiture ou train)" %>
       <%= f.input :ville, label: "Ville de départ?"%>
       <%= f.input :place, label: "Combien de de place as-tu de disponible dans ta voiture"%>
       <%= f.input :rendezvous, label: "Lieu de rendez-vous pour le départ"%>
@@ -12,8 +30,3 @@
       <%= f.input :heure_arrivee, label: "A quelle heure arrive ton train ?"%>
       <%= f.button :submit%>
     <% end %>
-    <% else %>
-    <h1>Merci de vous connecter</h1>
-    <%= link_to "Sign in", new_user_session_path, class: "btn btn-signup-forgotpassword py-2"%>
-    <%= link_to "Become a member", new_user_registration_path, class: "btn btn-signup-forgotpassword py-2"%>
-  <% end %>

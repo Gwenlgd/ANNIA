@@ -13,7 +13,7 @@ Voyage.destroy_all
 Repa.destroy_all
 User.destroy_all
 
-puts "Creating users..."
+puts "Creating Users..."
 user1 = User.create!(first_name: "Gwen", last_name: "Leg", email: "gwenl@test.com", password: "paradise")
 user2 = User.create!(first_name: "Mathilde", last_name: "Leg", email: "mathildel@test.com", password: "paradise")
 user3 = User.create!(first_name: "Claire", last_name: "Leg", email: "clairel@test.com", password: "paradise")
@@ -23,14 +23,14 @@ user6 = User.create!(first_name: "Laure", last_name: "Leg", email: "laure@test.c
 user7 = User.create!(first_name: "Margaux", last_name: "Leg", email: "margaux@test.com", password: "paradise")
 user8 = User.create!(first_name: "Gaïa", last_name: "Leg", email: "Gaia@test.com", password: "paradise")
 
-puts "Creating voyages..."
+puts "Creating Voyages..."
 voyage_gwen = Voyage.create!(category: "Voiture", ville: "Paris", rendezvous: "Paris 15", place: "3", heure_arrivee: "09:26:00" , date_arrivee: "2022-10-20" , heure_depart: "09:26:00" , date_depart: "2022-10-22",user: user1)
 
 voyage_gwen2 = Voyage.create!(category: "Train", ville: "Paris", rendezvous: "Paris 15", place: "2", heure_arrivee: "09:26:00" , date_arrivee: "2022-10-20" , heure_depart: "09:26:00" , date_depart: "2022-10-22",user: user1)
 
 voyage_mathilde = Voyage.create!(category: "Train", ville: "Nice", rendezvous: "Paris 15", place: "2", heure_arrivee: "09:26:00" , date_arrivee: "2022-10-20" , heure_depart: "09:26:00" , date_depart: "2022-10-22",user: user2)
 
-puts "Creating repas..."
+puts "Creating Repas..."
 
 repas1 = Repa.create!(items: "Salade de riz", allergies: "None", quantities: "1", drinks: "Vin", user: user1)
 repas2 = Repa.create!(items: "Quiche", allergies: "Vegan", quantities: "2", drinks: "Vin", user: user2)
