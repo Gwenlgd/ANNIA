@@ -20,10 +20,10 @@ class VoyagesController < ApplicationController
   end
 
   def create
-    @voyage.user_id = current_user.id
-    # @user_id = current_user.id
+    @user_id = current_user.id
     @voyage = Voyage.new(voyage_params)
-    # @voyage_user = current_user.id
+    @voyage.user_id = current_user.id
+
     if @voyage.save
       redirect_to voyages_path, notice: "Item was saved successfully."
     else

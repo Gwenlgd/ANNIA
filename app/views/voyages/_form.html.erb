@@ -10,7 +10,7 @@
       <%= f.input :heure_depart, label: "A quelle heure penses-tu partir ?"%>
       <%= f.input :date_arrivee, label: "Quel jour arrives-tu ?"%>
       <%= f.input :heure_arrivee, label: "A quelle heure arrive ton train ?"%>
-      <%= f.hidden_field :user_id %>
+      <%= f.hidden_field :user_id, :user_id => @voyage_user %>
       <%= f.button :submit%>
     <% end %>
     <% else %>
