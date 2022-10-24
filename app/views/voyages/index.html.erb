@@ -16,10 +16,12 @@
 <%# Pour tout le monde : afficher par statut : avec place disponible ou en recherche ou ok pas besoin %>
 <%# Pour current user : afficher son trajet même si pas de place %>
 
-
+<h3> DESTROY OK, PROBLEM WITH EDIT & CREATE</h3>
   <% @voyages.each do |voyage| %>
     <%= voyage.category %>
     <%= voyage.user.first_name %>
+    <%= voyage.user.id %>
+
     <%= link_to "More info", voyage_path(voyage) %>
     <%= link_to "Edit", edit_voyage_path(voyage), class: "ms-3 text-warning" %>
     <%= link_to "Remove", voyage_path(voyage),

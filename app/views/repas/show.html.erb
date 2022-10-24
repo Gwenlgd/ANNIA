@@ -1,0 +1,17 @@
+<h1>Margin à ajouter</h1>
+<h1>Margin à ajouter</h1>
+
+  <%= link_to "Retour", repas_path %>
+
+  <h1> Repas</h1>
+    <h2>Par <%= @repa.user.first_name %></h2>
+    <p> Food : <%= @repa.items %></p>
+    <p> Boissons : <%= @repa.drinks %></p>
+    <p> Allergies :<%= @repa.allergies %></p>
+    <p> Quantités : <%= @repa.quantities %></p>
+
+
+      <%= link_to "Edit", edit_repa_path(@repa), class: "ms-3 text-warning" %>
+      <%= link_to "Remove", repa_path(@repa),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+          class: "ms-3 text-danger" %>
