@@ -14,6 +14,7 @@ class RepasController < ApplicationController
 
   def create
     @repa = Repa.new(repa_params)
+    @repa.user_id = current_user.id
     if @repa.save
       redirect_to repas_path
     else
