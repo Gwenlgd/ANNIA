@@ -12,3 +12,18 @@
     <%= link_to new_repa_path do %>
     <p>Créer</p>
     <% end %>
+
+<h3> DESTROY OK, PROBLEM WITH EDIT & CREATE</h3>
+
+<% @repas.each do |repa| %>
+  <%= repa.user.first_name %>
+  <%= repa.user.id %>
+  <%= repa.items %>
+  <%= repa.allergies %>
+  <%= repa.quantities %>
+  <%= link_to "More info", repa_path(repa) %>
+  <%= link_to "Edit", edit_repa_path(repa), class: "ms-3 text-warning" %>
+  <%= link_to "Remove", repa_path(repa),
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+        class: "ms-3 text-danger"%>
+  <% end %>

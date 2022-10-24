@@ -1,13 +1,12 @@
-
-
 <h1>Margin à ajouter</h1>
 <h1>Margin à ajouter</h1>
 
 
 <h1>Edit</h1>
 
-<% if current_user.id == @voyage.user %>
-  <%= render "form", voyage: @voyage %>
+
+<% if current_user.id == @repa.user %>
+  <%= render "form", repa: @repa %>
 <% else %>
 <p>You can not modify</p>
 <% end %>
