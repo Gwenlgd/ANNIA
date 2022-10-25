@@ -1,4 +1,11 @@
-    <%= simple_form_for(@cabanes, data: {turbo: false}) do |f| %>
+<h1>Margin à ajouter</h1>
+<h1>Margin à ajouter</h1>
+
+
+<h1>Créer Cabane</h1>
+
+    <%= simple_form_for(@cabane, data: {turbo: false}) do |f| %>
       <%= f.input :name %>
+      <%= f.input :chambre_id %>
       <%= f.button :submit%>
     <% end %>
