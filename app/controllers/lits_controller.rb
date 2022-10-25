@@ -1,0 +1,2 @@
+class LitsController < ApplicationController
+end
