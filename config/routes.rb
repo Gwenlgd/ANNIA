@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :users do
-    resources :voyages do
-    end
+    resources :voyages
   end
+
   resources :voyages
   resources :repas
   resources :cabanes
