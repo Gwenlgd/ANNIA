@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   resources :voyages
   resources :repas
   resources :cabanes
+  resources :chambres
+  resources :bookings
+  resources :lits
 end
