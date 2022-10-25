@@ -1,0 +1,2 @@
+class ChambresController < ApplicationController
+end
