@@ -11,6 +11,7 @@ require "json"
 puts "Cleaning database..."
 Voyage.destroy_all
 Repa.destroy_all
+Lit.destroy_all
 User.destroy_all
 
 puts "Creating Users..."
@@ -35,3 +36,7 @@ puts "Creating Repas..."
 repas1 = Repa.create!(items: "Salade de riz", allergies: "None", quantities: "1", drinks: "Vin", user: user1)
 repas2 = Repa.create!(items: "Quiche", allergies: "Vegan", quantities: "2", drinks: "Vin", user: user2)
 repas2 = Repa.create!(items: "Chips", allergies: "Gluten", quantities: "5", drinks: "Vin", user: user3)
+
+puts "Creating Lits..."
+lituneplace = Lit.create!(nombre_place: "1")
+litdeuxplaces = Lit.create!(nombre_place: "2")
