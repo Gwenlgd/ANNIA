@@ -10,9 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_21_014908) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_25_065453) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "lits_id", null: false
+    t.string "statut"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lits_id"], name: "index_bookings_on_lits_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "cabanes", force: :cascade do |t|
+    t.string "name"
+    t.bigint "chambre_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chambre_id"], name: "index_cabanes_on_chambre_id"
+  end
+
+  create_table "chambres", force: :cascade do |t|
+    t.bigint "lits_id", null: false
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lits_id"], name: "index_chambres_on_lits_id"
+  end
+
+  create_table "lits", force: :cascade do |t|
+    t.string "nombre_place"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "repas", force: :cascade do |t|
     t.string "items"
@@ -54,6 +86,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_014908) do
     t.index ["user_id"], name: "index_voyages_on_user_id"
   end
 
+  add_foreign_key "bookings", "lits", column: "lits_id"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "cabanes", "chambres"
+  add_foreign_key "chambres", "lits", column: "lits_id"
   add_foreign_key "repas", "users"
   add_foreign_key "voyages", "users"
 end
