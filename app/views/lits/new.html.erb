@@ -1,0 +1,10 @@
+
+<h1>Margin à ajouter</h1>
+<h1>Margin à ajouter</h1>
+
+
+<h2>Nouveau lit</h2>
+<%= simple_form_for(@lit, data: {turbo: false}) do |f| %>
+      <%= f.input :nombre_place, placeholder: "Nombre de place" %>
+      <%= f.button :submit%>
+    <% end %>
