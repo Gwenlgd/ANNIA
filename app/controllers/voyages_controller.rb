@@ -2,12 +2,9 @@ class VoyagesController < ApplicationController
   before_action :set_voyage, only: [:show, :edit, :update, :destroy]
 
   def index
-    @voyages = Voyage.where(user_id:current_user.id)    # if params[:query].present?
-    #   @query = params[:query]
-    #   @voyages = Voyage.where("name LIKE ?", "%#{params[:query]}%")
-    # else
-     @voyages = Voyage.all
-    # end
+    @voyages_user = Voyage.where(user_id: current_user)
+    @voyages = Voyage.all
+    @user = current_user
   end
 
   def show
