@@ -13,16 +13,30 @@
     <p>Créer</p>
     <% end %>
 
+<%# FAIRE UNE LISTE DE CE DONT ON A BESOIN POUR LE FORMULAIRE ? %>
 
-<% @repas.each do |repa| %>
-  <%= repa.user.first_name %>
-  <%= repa.user.id %>
-  <%= repa.items %>
-  <%= repa.allergies %>
-  <%= repa.quantities %>
-  <%= link_to "More info", repa_path(repa) %>
-  <%= link_to "Edit", edit_repa_path(repa), class: "ms-3 text-warning" %>
-  <%= link_to "Remove", repa_path(repa),
-        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-        class: "ms-3 text-danger"%>
+<h2> Ce que tu ramènes </h2>
+  <% @repas_users.each do |repa_user| %>
+    <%= repa_user.user.first_name %>
+    <%= repa_user.user.id %>
+    <%= repa_user.items %>
+    <%= repa_user.allergies %>
+    <%= repa_user.quantities %>
+      <%= link_to "More info", repa_path(repa_user) %>
+      <%= link_to "Edit", edit_repa_path(repa_user), class: "ms-3 text-warning" %>
+      <%= link_to "Remove", repa_path(repa_user),
+            data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+            class: "ms-3 text-danger"%>
+      <br><br>
   <% end %>
+
+<h2> Les autres : </h2>
+  <% @other_repas.each do |repa| %>
+    <%= repa.user.first_name %>
+    <%= repa.user.id %>
+    <%= repa.items %>
+    <%= repa.allergies %>
+    <%= repa.quantities %>
+      <%= link_to "More info", repa_path(repa) %>
+    <br><br>
+    <% end %>

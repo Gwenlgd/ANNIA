@@ -2,6 +2,9 @@ class RepasController < ApplicationController
   before_action :set_repa, only: [:show, :edit, :update, :destroy]
 
   def index
+    @user = current_user
+    @repas_users = Repa.where(user_id: current_user)
+    @other_repas = Repa.where.not(user_id: current_user)
     @repas = Repa.all
   end
 
