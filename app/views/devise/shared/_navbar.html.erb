@@ -26,11 +26,14 @@
             <%= link_to "Affaires", affaires_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-          <%# <li><%= current_user.first_name %></li> %>
-           <%# A SUPPRIMER %>
-          <%# <li><%= current_user.id %></li> %>
-            <%= image_tag "https://avatars.githubusercontent.com/u/104909839?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-
+          <% if current_user %>
+            <li><%= current_user.first_name %></li>
+            <%# A SUPPRIMER %>
+            <li><%= current_user.id%></li>
+          <% else %>
+            <p> Please sign in</p>
+          <% end %>
+          <%= image_tag "https://avatars.githubusercontent.com/u/104909839?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
@@ -38,7 +41,7 @@
               <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
-      </ul>
+          </ul>
     </div>
   </div>
 </div>
