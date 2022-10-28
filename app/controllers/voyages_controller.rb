@@ -2,9 +2,9 @@ class VoyagesController < ApplicationController
   before_action :set_voyage, only: [:show, :edit, :update, :destroy]
 
   def index
-    @voyages_user = Voyage.where(user_id: current_user)
-    @voyages = Voyage.all
     @user = current_user
+    @voyage_users = Voyage.where(user_id: current_user)
+    @other_voyages = Voyage.where.not(user_id: current_user)
   end
 
   def show
