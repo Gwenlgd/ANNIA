@@ -1,0 +1,19 @@
+<h1>Margin à ajouter</h1>
+<h1>Margin à ajouter</h1>
+
+
+<h1>Index Lits</h1>
+
+<%= link_to new_lit_path do %>
+    <p>Créer</p>
+    <% end %>
+
+
+<% @lits.each do |lit| %>
+  <%= lit.nombre_place %>
+  <%= link_to "More info", lit_path(lit) %>
+  <%= link_to "Edit", edit_lit_path(lit), class: "ms-3 text-warning" %>
+  <%= link_to "Remove", lit_path(lit),
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+        class: "ms-3 text-danger"%>
+  <% end %>
