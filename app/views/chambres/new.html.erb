@@ -1,0 +1,14 @@
+
+<h1>Margin à ajouter</h1>
+<h1>Margin à ajouter</h1>
+
+
+<h2>Nouvelle Chambre</h2>
+<%= simple_form_for(@chambre) do |f| %>
+      <%= f.input :name, placeholder: "Nom de la chambre" %>
+      <%= f.input :nombre_lits, placeholder: "Nombre de lits" %>
+      <%= f.input :lits_id, as: :check_boxes, collection: Lit.all, label: "Type de lits" %>
+      <%= f.button :submit%>
+    <% end %>
+
+<%= link_to "Retour", chambres_path %>

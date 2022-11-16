@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :voyages
   has_many :repas
   has_many :cabanes
+  has_many :bookings
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

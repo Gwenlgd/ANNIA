@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     resources :voyages
   end
 
+
+  resources :chambres do
+    resources :lits
+  end
+
   resources :voyages
   resources :repas
   resources :cabanes

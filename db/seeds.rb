@@ -11,7 +11,8 @@ require "json"
 puts "Cleaning database..."
 Voyage.destroy_all
 Repa.destroy_all
-Lit.destroy_all
+# Lit.destroy_all
+# Chambre.destroy_all
 User.destroy_all
 
 puts "Creating Users..."
@@ -37,6 +38,10 @@ repas1 = Repa.create!(items: "Salade de riz", allergies: "None", quantities: "1"
 repas2 = Repa.create!(items: "Quiche", allergies: "Vegan", quantities: "2", drinks: "Vin", user: user2)
 repas2 = Repa.create!(items: "Chips", allergies: "Gluten", quantities: "5", drinks: "Vin", user: user3)
 
-puts "Creating Lits..."
-lituneplace = Lit.create!(nombre_place: "1")
-litdeuxplaces = Lit.create!(nombre_place: "2")
+# puts "Creating Lits..."
+# lituneplace = Lit.create!(nombre_place: "1", chambre: chambreunlituneplace)
+# litdeuxplaces = Lit.create!(nombre_place: "2", chambre: chambreunlitdeuxplaces)
+
+# puts "Creating Chambre..."
+# chambreunlituneplace = Chambre.create!(name: "Chambre 2", nombre_lits: 1, lits: lituneplace)
+# chambreunlitdeuxplaces = Chambre.create!(name: "Chambre 1", nombre_lits: 1, lits: litdeuxplaces)
