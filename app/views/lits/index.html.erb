@@ -10,7 +10,8 @@
 
 
 <% @lits.each do |lit| %>
-  <%= lit.nombre_place %>
+  <p>Nb de place :<%= lit.nombre_place %></p>
+  <p>Lit ID :<%= lit.id %></p>
   <%= link_to "More info", lit_path(lit) %>
   <%= link_to "Edit", edit_lit_path(lit), class: "ms-3 text-warning" %>
   <%= link_to "Remove", lit_path(lit),

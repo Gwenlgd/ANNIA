@@ -18,7 +18,7 @@ class VoyagesController < ApplicationController
     @voyage = Voyage.new(voyage_params)
     @voyage.user_id = current_user.id
     if @voyage.save
-      redirect_to voyages_path, notice: "Item was saved successfully."
+      redirect_to voyages_path, notice: "Merci !"
     else
       flash[:error] = "Error creating item. Please try again."
       render :new, status: :unprocessable_entity

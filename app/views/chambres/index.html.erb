@@ -1,0 +1,19 @@
+<h1>Margin à ajouter</h1>
+<h1>Margin à ajouter</h1>
+
+
+<h1>Index Chambres</h1>
+
+<%= link_to new_chambre_path do %>
+    <p>Créer</p>
+    <% end %>
+
+
+<% @chambres.each do |chambre| %>
+  <%= chambre.name %>
+  <%= link_to "More info", chambre_path(chambre) %>
+  <%= link_to "Edit", edit_chambre_path(chambre), class: "ms-3 text-warning" %>
+  <%= link_to "Remove", chambre_path(chambre),
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+        class: "ms-3 text-danger"%>
+  <% end %>

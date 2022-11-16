@@ -1,0 +1,2 @@
+      <%= f.input :lits_id, collection: @lits, value_method: :id, label: "Type de lits",include_blank: false %>
+            <%= f.input :lits_id, collection: Lit.all, input_html: {multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true}}}, label: "Type de lits" %>
