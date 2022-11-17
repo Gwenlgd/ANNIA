@@ -11,9 +11,6 @@
       <%#  changer date/heure arrivée / départ, pas logique %>
       <p>Nb de place dans la voiture :<%= @voyage.place %></p>
 
-
-
-
       <% if current_user.id == @voyage.user_id %>
         <%= link_to "Retour", voyages_path %>
         <%= link_to "Edit", edit_voyage_path(@voyage), class: "ms-3 text-warning" %>
