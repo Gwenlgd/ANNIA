@@ -6,10 +6,10 @@ class VoyagesController < ApplicationController
     @voyage_users = Voyage.where(user_id: current_user)
     # @other_voyages = Voyage.where.not(user_id: current_user)
     @other_voyages = Voyage.where.not(user_id: current_user).where.not(category: "Train").where.not(place: "0")
-
   end
 
   def show
+    @user = current_user
   end
 
   def new
