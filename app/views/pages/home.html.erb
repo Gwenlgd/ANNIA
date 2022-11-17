@@ -3,6 +3,13 @@
 
 <h1>30 IN 2023</h1>
 
+
+    <%= link_to new_user_session_path do %>
+    <p>Se connecter</p>
+    <% end %>
+    <%= button_to "Sign out", destroy_user_session_path , method: :delete  %>
+
+
 <div class="row justify-content-center">
     <div class="row">
       <div class="col-12 col-lg-8">
