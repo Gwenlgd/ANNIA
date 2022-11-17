@@ -1,0 +1,17 @@
+<h1>Margin à ajouter</h1>
+<h1>Margin à ajouter</h1>
+
+  <%= link_to "Retour", chambres_path %>
+
+  <h1> Chambre</h1>
+    <h2>Par <%= @chambre.name %></h2>
+    <p>Nombre de lits : <%= @chambre.nombre_lits %></p>
+    <p>Lit id :<%= @chambre.lits_id %></p>
+    <p>Lit (1 place ou 2 places) :<%= @lit_nombre_place %></p>
+
+
+
+      <%= link_to "Edit", edit_chambre_path(@chambre), class: "ms-3 text-warning" %>
+      <%= link_to "Remove", chambre_path(@chambre),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+          class: "ms-3 text-danger" %>
