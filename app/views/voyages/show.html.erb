@@ -13,8 +13,13 @@
 
 
 
-      <%= link_to "Retour", voyages_path %>
-      <%= link_to "Edit", edit_voyage_path(@voyage), class: "ms-3 text-warning" %>
-      <%= link_to "Remove", voyage_path(@voyage),
-          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-          class: "ms-3 text-danger" %>
+
+      <% if current_user.id == @voyage.user_id %>
+        <%= link_to "Retour", voyages_path %>
+        <%= link_to "Edit", edit_voyage_path(@voyage), class: "ms-3 text-warning" %>
+        <%= link_to "Remove", voyage_path(@voyage),
+            data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+            class: "ms-3 text-danger" %>
+      <% else %>
+        <%= link_to "Retour", voyages_path %>
+      <% end %>
