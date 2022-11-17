@@ -11,6 +11,8 @@
 
 <% @chambres.each do |chambre| %>
   <%= chambre.name %>
+  <p>Nombre de lits : <%= chambre.nombre_lits %></p>
+  <p>Lit id :<%= chambre.lits_id %></p>
   <%= link_to "More info", chambre_path(chambre) %>
   <%= link_to "Edit", edit_chambre_path(chambre), class: "ms-3 text-warning" %>
   <%= link_to "Remove", chambre_path(chambre),

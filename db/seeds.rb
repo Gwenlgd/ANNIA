@@ -43,5 +43,5 @@ repas2 = Repa.create!(items: "Chips", allergies: "Gluten", quantities: "5", drin
 # litdeuxplaces = Lit.create!(nombre_place: "2", chambre: chambreunlitdeuxplaces)
 
 # puts "Creating Chambre..."
-# chambreunlituneplace = Chambre.create!(name: "Chambre 2", nombre_lits: 1, lits: lituneplace)
+# chambreunlituneplace = Chambre.create!(name: "Chambre 2", nombre_lits: 1, lits_id: lituneplace)
 # chambreunlitdeuxplaces = Chambre.create!(name: "Chambre 1", nombre_lits: 1, lits: litdeuxplaces)
