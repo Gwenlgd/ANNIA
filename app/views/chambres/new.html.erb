@@ -8,6 +8,7 @@
       <%= f.input :name, placeholder: "Nom de la chambre" %>
       <%= f.input :nombre_lits, placeholder: "Nombre de lits" %>
       <%= f.input :lits_id, collection: Lit.all, label: "Type de lits" %>
+
       <%= f.button :submit%>
     <% end %>
 
