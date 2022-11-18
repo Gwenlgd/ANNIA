@@ -6,6 +6,7 @@
 
     <%= simple_form_for(@cabane, data: {turbo: false}) do |f| %>
       <%= f.input :name %>
-      <%= f.input :chambre_id %>
+      <%= f.input :chambre_id, collection: Chambre.all %>
       <%= f.button :submit%>
     <% end %>
+<%= link_to "Retour", cabanes_path %>

@@ -46,5 +46,4 @@ class ChambresController < ApplicationController
   def chambre_params
     params.require(:chambre).permit(:name, :nombre_lits, :lits_id)
   end
-
 end
