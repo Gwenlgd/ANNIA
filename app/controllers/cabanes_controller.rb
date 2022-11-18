@@ -40,7 +40,7 @@ class CabanesController < ApplicationController
   private
 
   def cabane_params
-    params.require(:cabane).permit(:name, :chambre_id)
+    params.require(:cabane).permit(:name, chambre_id: [])
   end
 
   def set_cabane

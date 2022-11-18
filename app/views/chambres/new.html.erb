@@ -7,7 +7,7 @@
 <%= simple_form_for(@chambre, data: {turbo: false}) do |f| %>
       <%= f.input :name, placeholder: "Nom de la chambre" %>
       <%= f.input :nombre_lits, placeholder: "Nombre de lits" %>
-      <%= f.input :lits_id, collection: Lit.all, label: "Type de lits" %>
+      <%= f.input :lits_id, collection: Lit.all, label: "Type de lits", input_html: {multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true}}} %>
       <%= f.button :submit%>
     <% end %>
 
