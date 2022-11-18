@@ -15,17 +15,32 @@ class CabanesController < ApplicationController
   def create
     @cabane = Cabane.new(cabane_params)
     if @cabane.save
-      redirect_to cabanes_path, notice: "Item was saved successfully."
+      redirect_to cabanes_path
     else
-      flash[:error] = "Error creating item. Please try again."
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @cabane.update(cabane_params)
+      redirect_to cabane_path(@cabane)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @cabane.destroy
+    redirect_to cabanes_path, status: :see_other
   end
 
   private
 
   def cabane_params
-    params.require(:cabane).permit(:name, :chambres)
+    params.require(:cabane).permit(:name, :chambre_id)
   end
 
   def set_cabane
