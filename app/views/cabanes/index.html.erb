@@ -11,6 +11,8 @@
 
 <% @cabanes.each do |cabane| %>
   <%= cabane.name %>
+  <%= cabane.chambre_id %>
+
   <%= link_to "More info", cabane_path(cabane) %>
   <%= link_to "Edit", edit_cabane_path(cabane), class: "ms-3 text-warning" %>
   <%= link_to "Remove", cabane_path(cabane),

@@ -1,0 +1,17 @@
+<h1>Margin à ajouter</h1>
+<h1>Margin à ajouter</h1>
+
+  <%= link_to "Retour", cabanes_path %>
+
+  <h1> Nom : <%= @cabane.name %></h1>
+
+    <% Cabane.all.each do |cabane| %>
+      <%= cabane.chambre_id %>
+    <% end %>
+
+
+
+    <%= link_to "Edit", edit_cabane_path(@cabane), class: "ms-3 text-warning" %>
+    <%= link_to "Remove", cabane_path(@cabane),
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+        class: "ms-3 text-danger" %>

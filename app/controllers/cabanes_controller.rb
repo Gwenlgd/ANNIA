@@ -6,6 +6,8 @@ class CabanesController < ApplicationController
   end
 
   def show
+    @cabane = Cabane.find(params[:id])
+    @chambre = Chambre.new
   end
 
   def new
@@ -14,7 +16,10 @@ class CabanesController < ApplicationController
 
   def create
     @cabane = Cabane.new(cabane_params)
-    if @cabane.save
+    if params[:cabane][:chambre_id].reject(&:blank?).each do |cabane|
+      @cabane = Cabane.new(chambre_id: cabane, name: cabane)
+      @cabane.save!
+    end
       redirect_to cabanes_path
     else
       render :new, status: :unprocessable_entity
