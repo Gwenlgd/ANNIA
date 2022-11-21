@@ -6,6 +6,7 @@ class ChambresController < ApplicationController
   end
 
   def show
+    @lits = @chambre.lits
   end
 
   def new
@@ -37,6 +38,7 @@ class ChambresController < ApplicationController
     redirect_to chambres_path, status: :see_other
   end
 
+
   private
 
   def set_chambre
@@ -44,6 +46,7 @@ class ChambresController < ApplicationController
   end
 
   def chambre_params
-    params.require(:chambre).permit(:name, :nombre_lits, :lits_id)
+    params.require(:chambre).permit(:name, :nombre_lits, lits_id: [])
   end
+
 end
