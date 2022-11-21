@@ -39,9 +39,9 @@ repas2 = Repa.create!(items: "Quiche", allergies: "Vegan", quantities: "2", drin
 repas2 = Repa.create!(items: "Chips", allergies: "Gluten", quantities: "5", drinks: "Vin", user: user3)
 
 # puts "Creating Lits..."
-# lituneplace = Lit.create!(nombre_place: "1", chambre: chambreunlituneplace)
-# litdeuxplaces = Lit.create!(nombre_place: "2", chambre: chambreunlitdeuxplaces)
+# lituneplace = Lit.create!(nombre_place: "1", chambre_id: chambreunlituneplace)
+# litdeuxplaces = Lit.create!(nombre_place: "2", chambre_id: chambreunlitdeuxplaces)
 
 # puts "Creating Chambre..."
 # chambreunlituneplace = Chambre.create!(name: "Chambre 2", nombre_lits: 1, lits_id: lituneplace)
-# chambreunlitdeuxplaces = Chambre.create!(name: "Chambre 1", nombre_lits: 1, lits: litdeuxplaces)
+# chambreunlitdeuxplaces = Chambre.create!(name: "Chambre 1", nombre_lits: 1, lits_id: litdeuxplaces)
